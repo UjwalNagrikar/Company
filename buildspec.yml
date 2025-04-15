@@ -2,16 +2,14 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      linux: latest
     commands:
-      - echo Installing NGINX...
+      - echo Updating packages and installing NGINX...
       - sudo apt-get update -y
       - sudo apt-get install nginx -y
 
   build:
     commands:
-      - echo Copying files to /var/www/html...
+      - echo Copying frontend files to /var/www/html...
       - sudo cp index.html /var/www/html/
       - sudo cp style.css /var/www/html/
       - sudo cp script.js /var/www/html/
